@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#作業\\partialViewTEST\\partialViewTest\\partialViewTest.csproj": {}
+    "D:\\C#作業\\forTeam\\partialViewTest.csproj": {}
   },
   "projects": {
-    "D:\\C#作業\\partialViewTEST\\partialViewTest\\partialViewTest.csproj": {
+    "D:\\C#作業\\forTeam\\partialViewTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#作業\\partialViewTEST\\partialViewTest\\partialViewTest.csproj",
+        "projectUniqueName": "D:\\C#作業\\forTeam\\partialViewTest.csproj",
         "projectName": "partialViewTest",
-        "projectPath": "D:\\C#作業\\partialViewTEST\\partialViewTest\\partialViewTest.csproj",
+        "projectPath": "D:\\C#作業\\forTeam\\partialViewTest.csproj",
         "packagesPath": "C:\\Users\\numba\\.nuget\\packages\\",
-        "outputPath": "D:\\C#作業\\partialViewTEST\\partialViewTest\\obj\\",
+        "outputPath": "D:\\C#作業\\forTeam\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\numba\\AppData\\Roaming\\NuGet\\NuGet.Config",

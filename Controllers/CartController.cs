@@ -6,7 +6,7 @@ namespace partialViewTest.Controllers
 {
     public class CartController : Controller
     {
-        private readonly CartService _cartService; // 使用 CartService 类型
+        private readonly CartService _cartService; 
 
         public CartController(CartService cartService)
         {
