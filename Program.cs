@@ -1,7 +1,18 @@
+using partialViewTest.Models;
+using partialViewTest.Services.function;
+using System;
+using Microsoft.Extensions.Logging;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddLogging();
+builder.Services.AddScoped<CartServiceBase<CCartVM, CCollectVM>, CartService>();
+
+
+
 
 var app = builder.Build();
 
