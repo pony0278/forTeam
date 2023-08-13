@@ -4,6 +4,7 @@ using partialViewTest.Services.factory;
 using System;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.VisualBasic;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,8 +35,15 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}/{cartType?}");
+        pattern: "{controller=Home}/{action=Index}/{id?}/{cartType?}");
+
+    endpoints.MapControllerRoute(
+        name: "areas",
+        pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+});
 
 app.Run();

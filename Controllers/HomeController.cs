@@ -15,7 +15,7 @@ namespace partialViewTest.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/CustomFolder/Home/Index.cshtml");
         }
         public IActionResult partialView1()
         {
