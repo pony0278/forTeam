@@ -3,16 +3,17 @@ using partialViewTest.Models;
 using partialViewTest.Services.function;
 using System;
 using Microsoft.Extensions.Logging;
+using partialViewTest.Services.factory;
 
 namespace partialViewTest.Controllers
 {
     public class CartController : Controller
     {
-        private readonly CartServiceBase<CCartVM, CCollectVM> _cartService;
+        private readonly ICartServiceFactory _cartServiceFactory;
 
-        public CartController(CartServiceBase<CCartVM, CCollectVM> cartService)
+        public CartController(ICartServiceFactory cartServiceFactory)
         {
-            _cartService = cartService ?? throw new ArgumentNullException(nameof(cartService));
+            _cartServiceFactory = cartServiceFactory;
         }
 
         public IActionResult Index()
@@ -20,10 +21,11 @@ namespace partialViewTest.Controllers
             return View();
         }
 
-        public IActionResult AddToCart(int productId)
+        public IActionResult AddToCart(int productId, string cartType = "default")
         {
-            _cartService.AddToCart(productId);
-            return Content("Index");
+            var cartService = _cartServiceFactory.CreateService(cartType);
+            cartService.AddToCart(productId);
+            return Content($"Product added to {cartType} cart");
         }
     }
 }

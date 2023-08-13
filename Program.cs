@@ -1,15 +1,18 @@
 using partialViewTest.Models;
 using partialViewTest.Services.function;
+using partialViewTest.Services.factory;
 using System;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddLogging();
-builder.Services.AddScoped<CartServiceBase<CCartVM, CCollectVM>, CartService>();
+builder.Services.AddScoped<ICartServiceFactory, CartServiceFactory>();
+builder.Services.AddScoped<CartService>();
+builder.Services.AddScoped<PremiumCartService>();
 
 
 
@@ -33,6 +36,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}/{cartType?}");
 
 app.Run();

@@ -11,10 +11,10 @@ namespace partialViewTest.Services.function
 
         public override void AddToCart(CCartVM item)
         {
-            // 實現添加到購物車的邏輯
+            // 購物車的邏輯
             try
             {
-                // 嘗試執行添加邏輯
+                // 執行邏輯
             }
             catch (Exception ex)
             {
